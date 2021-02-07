@@ -14,8 +14,12 @@ function TestNavigation(props) {
           backgroundColor: Platform.OS === 'android' ? Colors.primary : '',
         },
       }}>
-      <Stack.Navigator>
-        <Stack.Screen name="intro" component={intro} />
+      <Stack.Navigator initialRouteName="Home" headerMode="none">
+        <Stack.Screen
+          name="intro"
+          component={intro}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
