@@ -9,6 +9,7 @@ Este proyecto trabaja principalmente con estas librerías:
 - [React](https://reactjs.org) (v16.13.1) Para crear interfaces gráficas con Javascript.
 - [React Native](https://facebook.github.io/react-native/) (v0.63.4) Para traducir las interfaces de React a las plataformas moviles.
 - [React Navigation](https://reactnavigation.org/) (v5) Para el ruteo de pantallas en la aplicación.
+- [Reac-native-Wizard](https://www.npmjs.com/package/react-native-wizard) Para navegacion entre formularios.
 - [Prettier](https://prettier.io/) y [Eslint](https://eslint.org/) preconfigurado para React Native.
 
 ## Directorios del proyecto
