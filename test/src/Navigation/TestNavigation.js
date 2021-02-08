@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import Intro from './../screens/intro';
-import FormData from './../screens/FormData';
+import {Intro, FormData} from 'screens';
+
 import Colors from '../constants/Colors';
 import {Platform} from 'react-native';
 const Stack = createStackNavigator();
