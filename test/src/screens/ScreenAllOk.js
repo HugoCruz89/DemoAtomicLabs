@@ -6,48 +6,44 @@ import {
   Image,
   TouchableWithoutFeedback,
   Keyboard,
+  Dimensions,
 } from 'react-native';
 import {TextInput} from 'components';
 import Colors from './../constants/Colors';
-const Form2 = (props) => {
+var {width, height} = Dimensions.get('window');
+const ScreenAllOk = (props) => {
   return (
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss();
       }}>
-      <View style={{height: '75%'}}>
+      <View style={{flex: 1}}>
         <View style={{marginHorizontal: 50}}>
           <View style={styles.Header}>
-            <View style={{width: 80, marginTop: 20}}>
-              <Image
-                style={styles.Numbers}
-                source={require('./../assets/Images/Group4023.png')}
-              />
-            </View>
-            <View style={{width: '70%'}}>
-              <Text style={styles.text}>
-                VALIDA TU
-                <Text style={styles.TextRed(Colors.primary)}>
-                  {'\n'}CELULAR
-                </Text>
+            <Text style={styles.text}>
+              TUS DATOS{'\n'}HAN SIDO
+              <Text style={styles.TextRed(Colors.primary)}>
+                {' '}
+                ENVIADOS CON ÉXITO
               </Text>
-            </View>
+            </Text>
           </View>
         </View>
         <View style={{marginHorizontal: 20, marginTop: 15}}>
           <Text style={styles.TextDescription}>
-            Necesitamos validar tu número para continuar
+            En breve recibirás un correo de confirmación por parte del equipo de
+            AtomicsLabs.
           </Text>
           <Text style={styles.TextDescription}>
-            Ingresa tu número a 10 dígitos y te enviaremos un codigo SMS.
+            Recuerda revizar tu bandeja de SPAM ¡Esperamos verte pronto!.
           </Text>
-          <View style={{marginVertical: 20}}>
-            <Text style={styles.TextDescription}>Numero de celular</Text>
-            <TextInput
-              keyboardType="number-pad"
-              value={props.cellphone}
-              onChangeText={(text) => props.onChangeCellphone(text)}
-            />
+          <View style={{marginVertical: 30}}>
+            <View>
+              <Image
+                style={styles.Logo(width, height)}
+                source={require('./../assets/Images/Group4039.png')}
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -55,6 +51,11 @@ const Form2 = (props) => {
   );
 };
 const styles = StyleSheet.create({
+  Logo: (width, height) => ({
+    width: width * 0.85,
+    height: height * 0.4,
+    resizeMode: 'stretch',
+  }),
   Header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -71,16 +72,15 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
-    textAlign: 'left',
+    textAlign: 'center',
     backgroundColor: 'transparent',
   },
   TextDescription: {
     color: 'white',
     fontSize: 20,
-    marginBottom: 15,
 
     textAlign: 'left',
     backgroundColor: 'transparent',
   },
 });
-export default Form2;
+export default ScreenAllOk;
