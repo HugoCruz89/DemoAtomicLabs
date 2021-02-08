@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import Background from './Background'
 const FormData = () => {
   return (
-    <View>
-      <Text>nuevo form</Text>
-    </View>
+    <Background>
+        
+    </Background>
   );
 };
 

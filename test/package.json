@@ -19,7 +19,8 @@
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screen": "^1.0.1",
-    "react-native-screens": "^2.17.1"
+    "react-native-screens": "^2.17.1",
+    "react-native-wizard": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.13",
