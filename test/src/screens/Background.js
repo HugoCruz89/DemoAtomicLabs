@@ -1,18 +1,20 @@
 import React from 'react';
-import {View, StyleSheet, ImageBackground} from 'react-native';
+import {View, StyleSheet, ImageBackground, SafeAreaView} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const Background = (props) => {
   const insets = useSafeAreaInsets();
   const {children} = props;
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require('./../assets/Images/MaskGroup1.png')}
-        style={styles.image}>
-        <View style={styles.containerResponsive(insets)}>{children}</View>
-      </ImageBackground>
-    </View>
+    <SafeAreaView style={{backgroundColor:'#E3E3EA',flex:1}}>
+      <View style={styles.container}>
+        <ImageBackground
+          source={require('./../assets/Images/MaskGroup1.png')}
+          style={styles.image}>
+          <View style={styles.containerResponsive(insets)}>{children}</View>
+        </ImageBackground>
+      </View>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({

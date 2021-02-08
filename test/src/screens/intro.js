@@ -9,7 +9,7 @@ const Intro = (props) => {
   return (
     <Background>
       <Text style={styles.text}>
-        Desarrolla todo {'\n'} <Text style={styles.TextRed}>tu POTENCIAL</Text>{' '}
+        Desarrolla todo {'\n'} <Text style={styles.TextRed}>tu POTENCIAL</Text>
         dentro del equipo <Text style={styles.TextRed}>ATOMIC</Text>LABS
       </Text>
       <CircularButton />
@@ -41,7 +41,7 @@ const Intro = (props) => {
 const styles = StyleSheet.create({
   Logo: (width, height) => ({
     width: width * 0.85,
-    height: height * 0.48,
+    height: height * 0.4,
     resizeMode: 'stretch',
   }),
 
@@ -50,11 +50,10 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 42,
+    fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: 'transparent',
-    marginHorizontal: 15,
   },
 });
 export default Intro;
