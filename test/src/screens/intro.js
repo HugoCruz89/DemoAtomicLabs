@@ -1,65 +1,44 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  Dimensions,
-} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import Background from './Background';
 import CircularButton from './../components/CircularButton';
 import Button from './../components/Button.js';
+
 var {width, height} = Dimensions.get('window');
-const Intro = () => {
-  const insets = useSafeAreaInsets();
+const Intro = (props) => {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require('./../assets/Images/MaskGroup1.png')}
-        style={styles.image}>
-        <View style={styles.containerResponsive(insets)}>
-          <Text style={styles.text}>
-            Desarrolla todo {'\n'}{' '}
-            <Text style={styles.TextRed}>tu POTENCIAL</Text> dentro del equipo{' '}
-            <Text style={styles.TextRed}>ATOMIC</Text>LABS
-          </Text>
-          <CircularButton />
-          <View>
-            <Image
-              style={styles.Logo(width, height)}
-              source={require('./../assets/Images/Group4032.png')}
-            />
-          </View>
-          <View
-            style={{
-              marginHorizontal: width * 0.25,
-              marginVertical: height * 0.03,
-              borderRadius: 30,
-            }}>
-            <Button theme="tertiary" title="¡Quiero ser parte!" />
-          </View>
-        </View>
-      </ImageBackground>
-    </View>
+    <Background>
+      <Text style={styles.text}>
+        Desarrolla todo {'\n'} <Text style={styles.TextRed}>tu POTENCIAL</Text>{' '}
+        dentro del equipo <Text style={styles.TextRed}>ATOMIC</Text>LABS
+      </Text>
+      <CircularButton />
+      <View>
+        <Image
+          style={styles.Logo(width, height)}
+          source={require('./../assets/Images/Group4032.png')}
+        />
+      </View>
+      <View
+        style={{
+          marginHorizontal: width * 0.25,
+          marginVertical: height * 0.03,
+          borderRadius: 30,
+        }}>
+        <Button
+          theme="tertiary"
+          title="¡Quiero ser parte!"
+          onPress={() => {
+            props.navigation.navigate('formData', {
+              ID: '',
+            });
+          }}
+        />
+      </View>
+    </Background>
   );
 };
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  containerResponsive: (insets) => ({
-    paddingTop: insets.top,
-    paddingBottom: insets.bottom,
-    flex: 1,
-    alignItems: 'center',
-  }),
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'flex-start',
-  },
   Logo: (width, height) => ({
     width: width * 0.85,
     height: height * 0.48,
