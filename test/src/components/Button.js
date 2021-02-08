@@ -10,8 +10,9 @@ import {
   oneOfType,
   array,
 } from 'prop-types';
-import {TouchableHighlight, StyleSheet, ActivityIndicator} from 'react-native';
+import {TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
 import Text from './Text';
+
 
 function Button(props) {
   const {
@@ -25,7 +26,7 @@ function Button(props) {
     children,
   } = props;
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       onPress={onPress}
       disabled={disabled || loading}
       underlayColor="#DDDDDD"
@@ -51,7 +52,7 @@ function Button(props) {
           {title}
         </Text>
       )}
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 }
 

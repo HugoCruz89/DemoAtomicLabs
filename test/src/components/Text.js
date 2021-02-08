@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
   body: {
     fontSize: 14,
     color: '#43485C',
-    fontFamily: 'Lato',
     fontStyle: 'normal',
   },
 });
