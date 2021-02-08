@@ -1,18 +1,37 @@
 import React, {useRef, useState} from 'react';
-import {View, StyleSheet, Button, Text, Image} from 'react-native';
+import {View, StyleSheet, Dimensions, Image} from 'react-native';
 import Background from './Background';
 import Wizard from 'react-native-wizard';
-import {StepLine} from 'components';
+import {StepLine, Button} from 'components';
 import {Form1, Form2} from 'screens';
+
+var {width, height} = Dimensions.get('window');
 const FormData = (props) => {
   const wizard = useRef({next: () => null});
   const [isFirstStep, setIsFirstStep] = useState(false);
   const [isLastStep, setIsLastStep] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
+  const [name, setName] = useState('');
+  const [secondName, setSecondName] = useState('');
+  const [email, onChangeEmail] = useState('');
+
+  const handleName = (value) => {
+    setName(value);
+  };
+  const handleSecondName = (value) => {
+    setSecondName(value);
+  };
 
   const stepList = [
     {
-      content: <Form1 />,
+      content: (
+        <Form1
+          onChangeName={handleName}
+          onChangeSecondName={handleSecondName}
+          name={name}
+          secondName={secondName}
+        />
+      ),
     },
     {
       content: <Form2 />,
@@ -37,7 +56,7 @@ const FormData = (props) => {
             ) : (
               <Image
                 style={styles.Numbers}
-                source={require('./../assets/Images/Group4015.png')}
+                source={require('./../assets/Images/Group4016.png')}
               />
             )}
           </View>
@@ -68,13 +87,20 @@ const FormData = (props) => {
             setCurrentStep(cs);
           }}
         />
+        <View
+          style={{
+            marginHorizontal: width * 0.25,
 
-        <Text style={{color:'white'}}>{currentStep }. Step</Text>
-        <Button
-          disabled={isLastStep}
-          title="Next"
-          onPress={() => wizard.current.next()}
-        />
+            borderRadius: 30,
+          }}>
+          <Button
+            theme="primary"
+            title="¡Enviar!"
+            onPress={() => {
+              wizard.current.next();
+            }}
+          />
+        </View>
       </View>
     </Background>
   );
@@ -85,6 +111,10 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
+  NextButton: (color) => ({
+    backgroundColor: color,
+    width: 30,
+  }),
 });
 
 export default FormData;

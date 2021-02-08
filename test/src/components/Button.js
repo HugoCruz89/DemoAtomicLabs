@@ -98,16 +98,16 @@ export const buttonStyle = StyleSheet.create({
     textAlign: 'center',
   },
   'primary-container': {
-    backgroundColor: 'white',
+    backgroundColor: '#FC3838',
   },
   'primary-container--disabled': {
     backgroundColor: '#43485C',
     opacity: 0.3,
   },
   'primary-text': {
-    color: 'blue',
+    color: 'white',
     textTransform: 'uppercase',
-    fontWeight: '700',
+    fontWeight: '500',
     fontSize: 18,
   },
   'primary-text--disabled': {
