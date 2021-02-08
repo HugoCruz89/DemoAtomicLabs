@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useRef, useState} from 'react';
 import {View, StyleSheet, Dimensions, Image, Alert} from 'react-native';
 import Background from './Background';
@@ -5,11 +6,10 @@ import Wizard from 'react-native-wizard';
 import {StepLine, Button} from 'components';
 import {Form1, Form2, ScreenAllOk} from 'screens';
 import PathServer from './../constants/PathServer';
-var {width, height} = Dimensions.get('window');
+var {width} = Dimensions.get('window');
 const FormData = (props) => {
   const wizard = useRef({next: () => null});
-  const [isFirstStep, setIsFirstStep] = useState(false);
-  const [isLastStep, setIsLastStep] = useState(false);
+
   const [currentStep, setCurrentStep] = useState(0);
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');

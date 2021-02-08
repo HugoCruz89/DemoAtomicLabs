@@ -22,7 +22,7 @@ Este proyecto trabaja principalmente con estas librerías:
 - [`src/screens`]: Estructura de rutas de la aplicación.
 - [`src/store`]: Si se utilizara Redux ahi se configurara los actions y reducers.
 
-Si necesitas importar algo de las carpetas components y screens en alguna otra, el proyecto se encuentra preparado para hacer [`importaciones por ruta absoluta`](). Sus nombres estan definidos en los `package.json` de cada una de estas carpetas, sólo ten cuidado de no caer en una [`importación cíclica`]().
+Si necesitas importar algo de las carpetas components y screens en alguna otra, el proyecto se encuentra preparado para hacer [`importaciones por ruta absoluta`]. Sus nombres estan definidos en los `package.json` de cada una de estas carpetas, sólo ten cuidado de no caer en una [`importación cíclica`].
 
 ## Requerimientos
 
@@ -54,7 +54,7 @@ PENDIENTE
 Tools
 
 - Syntax: Eslint + prettier
-- Tabulacion: Editorconfig:https://editorconfig.org/
+- Tabulacion: Editorconfig:<https://editorconfig.org/>
 
 ## Licencia
 
